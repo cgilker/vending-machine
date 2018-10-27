@@ -6,7 +6,7 @@
     "permissions": ["declarativeContent", "storage", "topSites", "tabs"],
 
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["background.js","dataPair.js"],
       "persistent": false
     },
     "browser_action": {
@@ -29,4 +29,3 @@
     "manifest_version": 2,
 	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
   }
-
