@@ -1,6 +1,11 @@
- chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-      console.log("The color is green.");
-    });
-	 
- });
+ //these things happen on installation
+ //h
+//chrome.runtime.onInstalled.addListener(function() {
+  //  var tops = topSites.get(function{});
+ //});
+ 
+/*	 
+chrome.runtime.onMessage.addListener(function() {
+	var tops = topSites.get();
+});
+*/
