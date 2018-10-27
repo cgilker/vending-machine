@@ -3,8 +3,6 @@
       console.log("The color is green.");
     });
     chrome.tabs.onCreated.addListener(function() {
-      chrome.storage.sync.set(function() {
         console.log("A new tab");
-      });
     });
  });
