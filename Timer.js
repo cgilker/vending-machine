@@ -7,6 +7,10 @@ function stop(){
   go = false;
 }
 
+function go(){
+  go = true;
+}
+
 if(go){
 setInterval(setTime, 1000);
 }
