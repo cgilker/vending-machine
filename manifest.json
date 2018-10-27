@@ -6,7 +6,7 @@
     "permissions": ["declarativeContent", "storage", "topSites", "tabs"],
 
     "background": {
-      "scripts": ["background.js","dataPair.js"],
+      "scripts": ["background.js","dataPair.js","Timer.js"],
       "persistent": false
     },
     "browser_action": {
