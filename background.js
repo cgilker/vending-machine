@@ -1,26 +1,4 @@
-class dataPair {
-
-	constructor(url){
-		this.time = 0;///should always start zero
-		this.url = url; //cant startw ithout unique URL!!!!
-
-	}
-
-	 getTime(){
-		 return this.time;
-	 }
-	 setTime(time){
-		 this.time = time;
-	 }
-
-	 getUrl(){
-		return this.url;
-	 }
-	 concatenate(){
-		Console.log(this.time+" "+this.url);
-	}
-}
-
+//A function to create the urls array
 function saveUrl(urls){
   console.log("Tab activated");
   //Finding the current URL and save it
