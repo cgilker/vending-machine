@@ -10,5 +10,5 @@
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);//This is a comment//
-    });
+    });//Here is another comment
  });
