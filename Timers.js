@@ -1,4 +1,5 @@
-class Timers{
+import document.*;
+class Timers {
   var minutesLabel = document.getElementById("minutes");
   var secondsLabel = document.getElementById("seconds");
   var totalSeconds = 0;
