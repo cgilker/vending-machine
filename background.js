@@ -9,6 +9,6 @@
         })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
-      }]);
+      }]);//This is a comment//
     });
  });
