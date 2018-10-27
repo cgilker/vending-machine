@@ -28,9 +28,11 @@ function saveUrl(urls){
       console.log(sb);
     }
   });
+  //Returning the new urls array
   return urls;
 }
 
+//When the extension is installed:
 chrome.runtime.onInstalled.addListener(function() {
   //A variable to store the URLs
   var urls = [];
@@ -40,11 +42,13 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.onHighlighted.addListener(function() {
       console.log("Tab highlighted");
     });
+    //Updating the urls array
     urls = saveUrl(urls);
   });
   //Checking if the tab is updated
   chrome.tabs.onUpdated.addListener(function() {
     console.log("Tab updated");
+    //Updating the urls array
     urls = saveUrl(urls);
   });
 });
