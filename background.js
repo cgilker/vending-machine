@@ -9,11 +9,6 @@
         })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
-<<<<<<< HEAD
-      }]);//This is a comment//aaa
-    });
-=======
       }]);//This is a comment//
     });//Here is another comment
->>>>>>> e2cd920e1a01e043dc81124c411423e243f28b70
- });
+ });//Hello
