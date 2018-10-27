@@ -17,13 +17,13 @@ function saveUrl(urls){
     }
     //A loop to check if the URL is already saved
     for(var i = 0; i < urls.length; i++){
-      if(sb == urls[i]){
+      if(sb == urls[i].getUrl()){
         isContained = true;
       }
     }
     //If the URL is not already saved, save the URL
     if(!isContained){
-      urls.push(sb);
+      urls.push(new dataPair(sb));
       console.log(sb);
     }
   });
