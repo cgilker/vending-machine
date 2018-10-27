@@ -1,3 +1,4 @@
+//A function to create the urls array
 function saveUrl(urls){
   console.log("Tab activated");
   //Finding the current URL and save it
