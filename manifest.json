@@ -7,24 +7,24 @@
 
     "background": {
 
-      "scripts": ["background.js","dataPair.js","Timer.js"],
+      "scripts": ["background.js","dataPair.js","Timers.js"],
 
       "persistent": false
     },
     "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {
-        
+
         "32": "images/vendicon32.png",
-      
+
         "128": "images/vendicon128.png"
       },
 	  "default_title": "Vending Machine"
     },
 	 "icons": {
-      
+
       "32": "images/vendicon32.png",
-      
+
       "128": "images/vendicon128.png"
     },
 
