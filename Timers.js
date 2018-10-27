@@ -4,7 +4,7 @@ class Timers {
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
-    var go = true;
+    var go = false;
   }
 
   //a method to stop the timer
