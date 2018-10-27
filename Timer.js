@@ -21,8 +21,8 @@ setInterval(setTime, 1000);
 //a method to continue the timeline
 function setTime() {
   ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+  secondsLabel = pad(totalSeconds % 60);
+  minutesLabel = pad(parseInt(totalSeconds / 60));
 }
 
 //a method so that numbers count properly
