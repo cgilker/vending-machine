@@ -1,16 +1,19 @@
 class Timers {
-  var minutesLabel = document.getElementById("minutes");
-  var secondsLabel = document.getElementById("seconds");
-  var totalSeconds = 0;
-  var go = true;
+
+  constructor(){
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    var go = true;
+  }
 
   //a method to stop the timer
-  function stop(){
+   stop(){
     go = false;
   }
 
   //a method to start the timer again
-  function go(){
+   go(){
     go = true;
   }
 
@@ -20,14 +23,14 @@ class Timers {
   }
 
   //a method to continue the timeline
-  function setTime() {
+   setTime() {
     ++totalSeconds;
     secondsLabel = pad(totalSeconds % 60);
     minutesLabel = pad(parseInt(totalSeconds / 60));
   }
 
   //a method so that numbers count properly
-  function pad(val) {
+   pad(val) {
     var valString = val + "";
     if (valString.length < 2) {
       return "0" + valString;
