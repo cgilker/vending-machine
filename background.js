@@ -7,6 +7,8 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.onHighlighted.addListener(function() {
       console.log("Tab highlighted");
     });
+
+
     console.log("Tab activated");
     //Finding the current URL and save it
     chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
@@ -64,6 +66,17 @@ chrome.runtime.onInstalled.addListener(function() {
             urls.push(sb);
             console.log(sb);
           }
+<<<<<<< HEAD
+=======
+        }
+        if(!isContained){
+          urls.push(sb);
+          console.log(sb);
+		  //store in a list of some kind
+		  
+
+        }
+>>>>>>> 66c8ac0a4c2b932962992640f2a1cee8d5c1fee0
       });
     });
   });
