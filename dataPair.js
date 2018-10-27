@@ -9,6 +9,16 @@ class dataPair {
 		
 	}
 	
+	 getTime(){
+		 return this.time;
+	 }
+	 setTime(time){
+		 this.time = time;
+	 }
+	 
+	 getUrl(){
+		return this.url;
+	 }
 	 concatenate(){
 		Console.log(this.time+" "+this.url);
 	}
