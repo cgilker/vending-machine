@@ -2,10 +2,11 @@
 
 
 class dataPair {
-	var timer;
+
+
 	constructor(url){
-		timer = new Timer();
-		this.time = 0;///should always start zero
+		var timer = new Timers();
+		timer = new Timers();
 		this.url = url; //cant startw ithout unique URL!!!!
 
 	}
