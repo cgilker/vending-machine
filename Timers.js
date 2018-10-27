@@ -19,11 +19,11 @@ class Timers {
 
   //the reason the timer can stop
   if(go){
-  setInterval(setTime, 1000);
+  setInterval(timeCounter, 1000);
   }
 
   //a method to continue the timeline
-   setTime() {
+   timeCounter() {
     ++totalSeconds;
     secondsLabel = pad(totalSeconds % 60);
     minutesLabel = pad(parseInt(totalSeconds / 60));
