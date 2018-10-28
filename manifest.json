@@ -7,7 +7,7 @@
 
     "background": {
 
-      "scripts": ["background.js","dataPair.js","Timers.js"],
+      "scripts": ["background.js","dataPair.js"],
 
       "persistent": false
     },
