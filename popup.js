@@ -1,5 +1,8 @@
  setInterval(updateTime(), 1000);
-
+let minutesLabel = document.getElementById("minutes");
+let secondsLabel = document.getElementById("seconds");
+minutesLabel.innerHTML = 11;
+secondsLabel.innerHTML = 84;
 // for (int x = 0; x < getURLS().length; x++)
 	 function updateTime(){
 
