@@ -6,7 +6,7 @@ class dataPair {
 
 	constructor(url){
 		var timer = new Timers();
-		this.url = url; //cant startw ithout unique URL!!!!
+		this.url = url; //cant start without unique URL!!!!
 
 	}
 
@@ -19,7 +19,7 @@ class dataPair {
 	}
 
 	 getTime(){
-		 return this.time;
+		 return timer.getTime();
 	 }
 	 setTime(time){
 		 this.time = time;

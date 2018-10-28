@@ -17,6 +17,10 @@ class Timers {
     go = true;
   }
 
+  getTime(){
+    return totalSeconds;
+  }
+
   //the reason the timer can stop
   if(go){
   setInterval(timeCounter, 1000);
