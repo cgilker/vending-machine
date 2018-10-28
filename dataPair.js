@@ -2,20 +2,24 @@
 class dataPair {
 
 	constructor(url){
+		this.timer = new Timers();
 		this.url = url; //cant start without unique URL!!!!
 
 	}
 
 	stopTimer(){
-		stop();
+		this.timer.stop();
 	}
 
 	startTimer(){
-		start();
+		this.timer.startTimer();
 	}
 
 	 getTime(){
-		 return getTime();
+		 return this.timer.getTime();
+	 }
+	 setTime(time){
+		 this.time = time;
 	 }
 
 	 getUrl(){
