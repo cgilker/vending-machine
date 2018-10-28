@@ -1,25 +1,22 @@
 //var twitter = (url:"twitter.com", time:"100")
-
-
 class dataPair {
 
-
 	constructor(url){
-		var timer = Timers.
+
 		this.url = url; //cant start without unique URL!!!!
 		
 	}	
 
 	stopTimer(){
-		timer.stop();
+		this.timer.stop();
 	}
 
 	startTimer(){
-		timer.go();
+		this.timer.startTimer();
 	}
 
 	 getTime(){
-		 return timer.getTime();
+		 return this.timer.getTime();
 	 }
 	 setTime(time){
 		 this.time = time;
