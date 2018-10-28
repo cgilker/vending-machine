@@ -2,10 +2,14 @@
 
 // for (int x = 0; x < getURLS().length; x++)
 	 function updateTime(){
-	
-		
+
+
 		document.write("Go Hyuck Yourslef");
-		document.getElementById("minutes").innerHTML = 44;//urls[0].getTotalTime();
-		
+    //var window = chrome.extension.getViews({type : "popup"});
+
+    //if(window){
+      document.getElementById("minutes").innerHTML = 11;
+    //}
+
 
 	 }
