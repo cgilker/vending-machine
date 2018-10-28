@@ -1,7 +1,13 @@
+var urls = [];
+
+function getURLS(){
+  return urls;
+}
+
 //A function to create the urls array
 function saveUrl(urls){
   console.log("Tab activated");
-  
+
   //Finding the current URL and save it
   chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
     //The current URL
@@ -45,8 +51,6 @@ function saveUrl(urls){
 
 //When the extension is installed:
 chrome.runtime.onInstalled.addListener(function() {
-  //A variable to store the URLs
-  var urls = [];
   //Activates when a tab is activated
   chrome.tabs.onActivated.addListener(function() {
     //Activates when a new tab is highlighted
