@@ -1,40 +1,38 @@
+
 class Timers {
 
   constructor(){
-    var minutesLabel = document.getElementById("minutes");
-    var secondsLabel = document.getElementById("seconds");
-    var totalSeconds = 0;
-    var go = false;
+    this.minutesLabel = document.getElementById("minutes");
+    this.secondsLabel = document.getElementById("seconds");
+    this.totalSeconds = 0;
+    this.go = false;
   }
 
   //a method to stop the timer
    stop(){
-    go = false;
+    this.go = false;
   }
 
   //a method to start the timer again
-   go(){
-    go = true;
+   startTimer(){
+    this.go = true;
+    //the reason the timer stop
+    setInterval(this.timeCounter, 1000);
   }
 
   getTime(){
-    return totalSeconds;
-  }
-
-  //the reason the timer can stop
-  if(go){
-  setInterval(timeCounter, 1000);
+    return this.totalSeconds;
   }
 
   //a method to continue the timeline
    timeCounter() {
-    ++totalSeconds;
-    secondsLabel.innerHTML = pad(totalSeconds % 60);
-    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    ++this.totalSeconds;
+    this.secondsLabel.innerHTML = pad(this.totalSeconds % 60);
+    this.minutesLabel.innerHTML = pad(parseInt(this.totalSeconds / 60));
   }
 
   //a method so that numbers count properly
-   pad(val) {
+  pad(val) {
     var valString = val + "";
     if (valString.length < 2) {
       return "0" + valString;
