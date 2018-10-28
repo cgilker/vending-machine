@@ -9,6 +9,8 @@ function saveUrl(urls){
     var sb = "";
     //A variable indicating if the URL has been saved already or not
     var isContained = false;
+    //The dataPair for this URL
+    var dataURL;
     //If the URL contains ".com/"
     if(tab.search(".com/") != -1){
       //A loop to cut down the size of the URL
@@ -16,15 +18,22 @@ function saveUrl(urls){
         sb = sb + tab.charAt(j);
       }
     }
+    //Making a new dataPair and starting its timer
+    dataURL = new dataPair(sb);
+    dataURL.startTimer();
     //A loop to check if the URL is already saved
     for(var i = 0; i < urls.length; i++){
+      //Stopping all of the timers
+      urls[i].stopTimer();
       if(sb == urls[i].getUrl()){
         isContained = true;
+        //Starting the timer of this URL
+        urls[i].startTimer();
       }
     }
     //If the URL is not already saved, save the URL
     if(!isContained){
-      urls.push(new dataPair(sb));
+      urls.push(dataURL);
       console.log(sb);
     }
   });
