@@ -29,8 +29,8 @@ class Timers {
   //a method to continue the timeline
    timeCounter() {
     ++totalSeconds;
-    secondsLabel = pad(totalSeconds % 60);
-    minutesLabel = pad(parseInt(totalSeconds / 60));
+    secondsLabel.innerHTML = pad(totalSeconds % 60);
+    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
   }
 
   //a method so that numbers count properly
