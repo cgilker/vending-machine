@@ -5,10 +5,10 @@ class dataPair {
 
 
 	constructor(url){
-		var timer = new Timers();
+		var timer = Timers.
 		this.url = url; //cant start without unique URL!!!!
-
-	}
+		
+	}	
 
 	stopTimer(){
 		timer.stop();
