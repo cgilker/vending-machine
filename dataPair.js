@@ -32,6 +32,6 @@ class dataPair {
 		return this.url;
 	 }
 	 concatenate(){
-		Console.log(this.time+" "+this.url);
+		return getTotalTime()+" "+this.url;
 	}
 }
