@@ -1,6 +1,7 @@
 //A function to create the urls array
 function saveUrl(urls){
   console.log("Tab activated");
+  
   //Finding the current URL and save it
   chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
     //The current URL
@@ -29,6 +30,7 @@ function saveUrl(urls){
         isContained = true;
         //Starting the timer of this URL
         urls[i].startTimer();
+		console.log(urls[i].getTotalTime());
       }
     }
     //If the URL is not already saved, save the URL

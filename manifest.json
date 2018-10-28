@@ -1,13 +1,13 @@
 {
     "name": "Vending Machine Time Tracker",
-    "version": "1.0",
+    "version": "2.0",
     "description": "",
 
     "permissions": ["declarativeContent", "storage", "topSites", "tabs"],
 
     "background": {
 
-      "scripts": ["background.js","dataPair.js","Timers.js"],
+      "scripts": ["background.js","dataPair.js"],
 
       "persistent": false
     },
