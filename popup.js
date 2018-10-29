@@ -1,18 +1,23 @@
- setInterval(updateTime(), 1000);
 let minutesLabel = document.getElementById("minutes");
 let secondsLabel = document.getElementById("seconds");
-minutesLabel.innerHTML = 11;
-secondsLabel.innerHTML = 84;
-// for (int x = 0; x < getURLS().length; x++)
-	 function updateTime(){
+let totalSeconds = 0;
 
+//adds on to the seconds every 1 second
+setInterval(startTime, 1000);
 
-		document.write("Go Hyuck Yourslef");
-    //var window = chrome.extension.getViews({type : "popup"});
+//A function to count time
+function startTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
 
-    //if(window){
-      document.getElementById("minutes").innerHTML = 11;
-    //}
-
-
-	 }
+//keeps the seconds and time ints in line so they don't go over 2 char
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
