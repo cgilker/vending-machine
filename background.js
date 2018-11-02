@@ -70,8 +70,8 @@ chrome.runtime.onInstalled.addListener(function() {
 
 
 //Always going timer
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
+let minutesLabel = document.getElementById("minutes");
+let secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
 
 //adds one to total seconds every second
