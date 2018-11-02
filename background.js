@@ -1,11 +1,7 @@
-var urls = [];
+var dataPairs = [];
 
-function getURLS(){
-  return urls;
-}
-
-//A function to create the urls array
-function saveUrl(urls){
+//A function to create the dataPairs array
+function saveUrl(dataPairs){
   console.log("Tab activated");
 
   //Finding the current URL and save it
@@ -29,24 +25,24 @@ function saveUrl(urls){
     dataURL = new dataPair(sb);
     dataURL.startTimer();
     //A loop to check if the URL is already saved
-    for(var i = 0; i < urls.length; i++){
+    for(var i = 0; i < dataPairs.length; i++){
       //Stopping all of the timers
-      urls[i].stopTimer();
-      if(sb == urls[i].getUrl()){
+      dataPairs[i].stopTimer();
+      if(sb == dataPairs[i].getUrl()){
         isContained = true;
         //Starting the timer of this URL
-        urls[i].startTimer();
-		console.log(urls[i].getTotalTime());
+        dataPairs[i].startTimer();
+		console.log(dataPairs[i].getTotalTime());
       }
     }
     //If the URL is not already saved, save the URL
     if(!isContained){
-      urls.push(dataURL);
+      dataPairs.push(dataURL);
       console.log(sb);
     }
   });
-  //Returning the new urls array
-  return urls;
+  //Returning the new dataPairs array
+  return dataPairs;
 }
 
 //When the extension is installed:
@@ -57,13 +53,13 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.tabs.onHighlighted.addListener(function() {
       console.log("Tab highlighted");
     });
-    //Updating the urls array
-    urls = saveUrl(urls);
+    //Updating the dataPairs array
+    dataPairs = saveUrl(dataPairs);
   });
   //Checking if the tab is updated
   chrome.tabs.onUpdated.addListener(function() {
     console.log("Tab updated");
-    //Updating the urls array
-    urls = saveUrl(urls);
+    //Updating the dataPairs array
+    dataPairs = saveUrl(dataPairs);
   });
 });
