@@ -21,25 +21,31 @@ function saveUrl(dataPairs){
         sb = sb + tab.charAt(j);
       }
     }
-    //Making a new dataPair and starting its timer
-    dataURL = new dataPair(sb);
-    dataURL.startTimer();
-    //A loop to check if the URL is already saved
-    for(var i = 0; i < dataPairs.length; i++){
-      //Stopping all of the timers
-      dataPairs[i].stopTimer();
-      if(sb == dataPairs[i].getUrl()){
-        isContained = true;
-        //Starting the timer of this URL
-        dataPairs[i].startTimer();
-		console.log(dataPairs[i].getTotalTime());
+    if(sb != ""){
+      //Making a new dataPair and starting its timer
+      dataURL = new dataPair(sb);
+      dataURL.startTimer();
+      //A loop to check if the URL is already saved
+      for(var i = 0; i < dataPairs.length; i++){
+        //Stopping all of the timers
+        dataPairs[i].stopTimer();
+        if(sb == dataPairs[i].getUrl()){
+          isContained = true;
+          //Starting the timer of this URL
+          dataPairs[i].startTimer();
+  		console.log(dataPairs[i].getTotalTime());
+        }
+      }
+      //If the URL is not already saved, save the URL
+      if(!isContained){
+        dataPairs.push(dataURL);
+        console.log(sb);
       }
     }
-    //If the URL is not already saved, save the URL
-    if(!isContained){
-      dataPairs.push(dataURL);
-      console.log(sb);
-    }
+  });
+  //Sorting the array
+  dataPairs.sort(function(a,b){
+    b.getTotalTime() - a.getTotalTime();
   });
   //Returning the new dataPairs array
   return dataPairs;
@@ -80,8 +86,8 @@ setInterval(time, 1000);
 //keeps minutes and seconds in proper format
 function time() {
   ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+  //secondsLabel.innerHTML = pad(totalSeconds % 60);
+  //minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
 }
 
 function pad(val) {
