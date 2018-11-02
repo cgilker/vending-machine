@@ -5,7 +5,7 @@ var totalSeconds = 0;
 var dataPairs = [];
 
 //adds on to the seconds every 1 second
-setInterval(startTime, 1000);
+setInterval(time, 1000);
 
 //A function to count time
 function startTime() {
@@ -13,7 +13,7 @@ function startTime() {
   //secondsLabel.innerHTML = pad(totalSeconds % 60);
   //minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
 
-  secondsLabel.innerHTML = this.dataPairs[1].getTotalTime();
+//  secondsLabel.innerHTML = this.dataPairs[1].getTotalTime();
 
   urlLabel.innerHTML = this.dataPairs[1].getUrl();
 }
@@ -30,4 +30,5 @@ function pad(val) {
 
 chrome.runtime.getBackgroundPage(function(bg){
   this.dataPairs = bg.dataPairs;
+  this.totalSeconds = bg.totalSeconds;
 });

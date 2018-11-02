@@ -1,5 +1,5 @@
 var dataPairs = [];
-
+var currI;
 //A function to create the dataPairs array
 function saveUrl(dataPairs){
   console.log("Tab activated");
@@ -63,3 +63,32 @@ chrome.runtime.onInstalled.addListener(function() {
     dataPairs = saveUrl(dataPairs);
   });
 });
+
+
+
+
+
+
+//Always going timer
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+
+//adds one to total seconds every second
+setInterval(time, 1000);
+
+//keeps minutes and seconds in proper format
+function time() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
