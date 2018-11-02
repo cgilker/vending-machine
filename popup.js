@@ -1,6 +1,8 @@
 let minutesLabel = document.getElementById("minutes");
 let secondsLabel = document.getElementById("seconds");
-let totalSeconds = 0;
+let urlLabel = document.getElementById("url");
+var totalSeconds = 0;
+var dataPairs = [];
 
 //adds on to the seconds every 1 second
 setInterval(startTime, 1000);
@@ -8,8 +10,12 @@ setInterval(startTime, 1000);
 //A function to count time
 function startTime() {
   ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+  //secondsLabel.innerHTML = pad(totalSeconds % 60);
+  //minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+
+  secondsLabel.innerHTML = this.dataPairs[1].getTotalTime();
+
+  urlLabel.innerHTML = this.dataPairs[1].getUrl();
 }
 
 //keeps the seconds and time ints in line so they don't go over 2 char
@@ -21,3 +27,7 @@ function pad(val) {
     return valString;
   }
 }
+
+chrome.runtime.getBackgroundPage(function(bg){
+  this.dataPairs = bg.dataPairs;
+});
